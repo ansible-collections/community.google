@@ -99,7 +99,7 @@ options:
 
 EXAMPLES = '''
 - name: Create Minimum Backend Service
-  community.general.gcp_backend_service:
+  community.google.gcp_backend_service:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -112,7 +112,7 @@ EXAMPLES = '''
     state: present
 
 - name: Create BES with extended backend parameters
-  community.general.gcp_backend_service:
+  community.google.gcp_backend_service:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -200,8 +200,8 @@ except ImportError:
     HAS_LIBCLOUD = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gce import gce_connect
-from ansible_collections.community.general.plugins.module_utils.gcp import check_params
+from ansible_collections.community.google.plugins.module_utils.gce import gce_connect
+from ansible_collections.community.google.plugins.module_utils.gcp import check_params
 
 
 def _validate_params(params):

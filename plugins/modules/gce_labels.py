@@ -88,7 +88,7 @@ options:
 
 EXAMPLES = '''
 - name: Add labels on an existing instance (using resource_url)
-  community.general.gce_labels:
+  community.google.gce_labels:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -99,7 +99,7 @@ EXAMPLES = '''
     resource_url: https://www.googleapis.com/compute/beta/projects/myproject/zones/us-central1-f/instances/example-instance
     state: present
 - name: Add labels on an image (using resource params)
-  community.general.gce_labels:
+  community.google.gce_labels:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -112,7 +112,7 @@ EXAMPLES = '''
     resource_name: my-custom-image
     state: present
 - name: Remove specified labels from the GCE instance
-  community.general.gce_labels:
+  community.google.gce_labels:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -163,7 +163,7 @@ except ImportError:
     HAS_PYTHON26 = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gcp import check_params, get_google_api_client, GCPUtils
+from ansible_collections.community.google.plugins.module_utils.gcp import check_params, get_google_api_client, GCPUtils
 
 
 UA_PRODUCT = 'ansible-gce_labels'

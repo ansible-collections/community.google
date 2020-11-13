@@ -66,20 +66,20 @@ author:
 
 EXAMPLES = '''
 - name: Add tags to instance
-  community.general.gce_tag:
+  community.google.gce_tag:
     instance_name: staging-server
     tags: http-server,https-server,staging
     zone: us-central1-a
     state: present
 
 - name: Remove tags from instance in default zone (us-central1-a)
-  community.general.gce_tag:
+  community.google.gce_tag:
     instance_name: test-server
     tags: foo,bar
     state: absent
 
 - name: Add tags to instances in zone that match pattern
-  community.general.gce_tag:
+  community.google.gce_tag:
     instance_pattern: test-server-*
     tags: foo,bar
     zone: us-central1-a
@@ -101,7 +101,7 @@ except ImportError:
     HAS_LIBCLOUD = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gce import gce_connect
+from ansible_collections.community.google.plugins.module_utils.gce import gce_connect
 
 
 def _union_items(baselist, comparelist):

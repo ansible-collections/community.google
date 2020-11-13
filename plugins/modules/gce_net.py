@@ -109,7 +109,7 @@ author: "Eric Johnson (@erjohnso) <erjohnso@google.com>, Tom Melendez (@supertom
 EXAMPLES = '''
 # Create a 'legacy' Network
 - name: Create Legacy Network
-  community.general.gce_net:
+  community.google.gce_net:
     name: legacynet
     ipv4_range: '10.24.17.0/24'
     mode: legacy
@@ -117,14 +117,14 @@ EXAMPLES = '''
 
 # Create an 'auto' Network
 - name: Create Auto Network
-  community.general.gce_net:
+  community.google.gce_net:
     name: autonet
     mode: auto
     state: present
 
 # Create a 'custom' Network
 - name: Create Custom Network
-  community.general.gce_net:
+  community.google.gce_net:
     name: customnet
     mode: custom
     subnet_name: "customsubnet"
@@ -134,7 +134,7 @@ EXAMPLES = '''
 
 # Create Firewall Rule with Source Tags
 - name: Create Firewall Rule w/Source Tags
-  community.general.gce_net:
+  community.google.gce_net:
     name: default
     fwname: "my-firewall-rule"
     allowed: tcp:80
@@ -143,7 +143,7 @@ EXAMPLES = '''
 
 # Create Firewall Rule with Source Range
 - name: Create Firewall Rule w/Source Range
-  community.general.gce_net:
+  community.google.gce_net:
     name: default
     fwname: "my-firewall-rule"
     allowed: tcp:80
@@ -152,7 +152,7 @@ EXAMPLES = '''
 
 # Create Custom Subnetwork
 - name: Create Custom Subnetwork
-  community.general.gce_net:
+  community.google.gce_net:
     name: privatenet
     mode: custom
     subnet_name: subnet_example
@@ -231,7 +231,7 @@ except ImportError:
     HAS_LIBCLOUD = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gce import gce_connect, unexpected_error_msg
+from ansible_collections.community.google.plugins.module_utils.gce import gce_connect, unexpected_error_msg
 
 
 def format_allowed_section(allowed):

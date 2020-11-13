@@ -81,21 +81,21 @@ options:
 
 EXAMPLES = '''
 - name: Create instance
-  community.general.gcspanner:
+  community.google.gcspanner:
     instance_id: '{{ instance_id }}'
     configuration: '{{ configuration }}'
     state: present
     node_count: 1
 
 - name: Create database
-  community.general.gcspanner:
+  community.google.gcspanner:
     instance_id: '{{ instance_id }}'
     configuration: '{{ configuration }}'
     database_name: '{{ database_name }}'
     state: present
 
 - name: Delete instance (and all databases)
-- community.general.gcspanner:
+- community.google.gcspanner:
     instance_id: '{{ instance_id }}'
     configuration: '{{ configuration }}'
     state: absent
@@ -147,7 +147,7 @@ except ImportError as e:
     HAS_GOOGLE_CLOUD_SPANNER = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gcp import check_min_pkg_version, get_google_cloud_credentials
+from ansible_collections.community.google.plugins.module_utils.gcp import check_min_pkg_version, get_google_cloud_credentials
 from ansible.module_utils.six import string_types
 
 

@@ -75,7 +75,7 @@ options:
 
 EXAMPLES = '''
 - name: Create Minimum HTTP Target_Proxy
-  community.general.gcp_target_proxy:
+  community.google.gcp_target_proxy:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -115,7 +115,7 @@ target_proxy:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gcp import get_google_api_client, GCPUtils
+from ansible_collections.community.google.plugins.module_utils.gcp import get_google_api_client, GCPUtils
 
 
 USER_AGENT_PRODUCT = 'ansible-target_proxy'

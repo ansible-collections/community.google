@@ -99,7 +99,7 @@ author:
 
 EXAMPLES = '''
 - name: Upload some content
-  community.general.gc_storage:
+  community.google.gc_storage:
     bucket: mybucket
     object: key.txt
     src: /usr/local/myfile.txt
@@ -107,49 +107,49 @@ EXAMPLES = '''
     permission: public-read
 
 - name: Upload some headers
-  community.general.gc_storage:
+  community.google.gc_storage:
     bucket: mybucket
     object: key.txt
     src: /usr/local/myfile.txt
     headers: '{"Content-Encoding": "gzip"}'
 
 - name: Download some content
-  community.general.gc_storage:
+  community.google.gc_storage:
     bucket: mybucket
     object: key.txt
     dest: /usr/local/myfile.txt
     mode: get
 
 - name: Download an object as a string to use else where in your playbook
-  community.general.gc_storage:
+  community.google.gc_storage:
     bucket: mybucket
     object: key.txt
     mode: get_str
 
 - name: Create an empty bucket
-  community.general.gc_storage:
+  community.google.gc_storage:
     bucket: mybucket
     mode: create
 
 - name: Create a bucket with key as directory
-  community.general.gc_storage:
+  community.google.gc_storage:
     bucket: mybucket
     object: /my/directory/path
     mode: create
 
 - name: Delete a bucket and all contents
-  community.general.gc_storage:
+  community.google.gc_storage:
     bucket: mybucket
     mode: delete
 
 - name: Create a bucket with versioning enabled
-  community.general.gc_storage:
+  community.google.gc_storage:
     bucket: "mybucket"
     versioning: yes
     mode: create
 
 - name: Create a bucket located in the eu
-  community.general.gc_storage:
+  community.google.gc_storage:
     bucket: "mybucket"
     region: "europe-west3"
     mode: create

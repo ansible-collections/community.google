@@ -68,7 +68,7 @@ options:
         description:
             - The Google Cloud Platform project ID to use.
 notes:
-    - See also M(community.general.gcdns_record).
+    - See also M(community.google.gcdns_record).
     - Zones that are newly created must still be set up with a domain registrar
       before they can be used.
 '''
@@ -76,15 +76,15 @@ notes:
 EXAMPLES = '''
 # Basic zone creation example.
 - name: Create a basic zone with the minimum number of parameters.
-  community.general.gcdns_zone: zone=example.com
+  community.google.gcdns_zone: zone=example.com
 
 # Zone removal example.
 - name: Remove a zone.
-  community.general.gcdns_zone: zone=example.com state=absent
+  community.google.gcdns_zone: zone=example.com state=absent
 
 # Zone creation with description
 - name: Creating a zone with a description
-  community.general.gcdns_zone: zone=example.com description="This is an awesome zone"
+  community.google.gcdns_zone: zone=example.com description="This is an awesome zone"
 '''
 
 RETURN = '''
@@ -126,7 +126,7 @@ except ImportError:
     PROVIDER = None
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gcdns import gcdns_connect
+from ansible_collections.community.google.plugins.module_utils.gcdns import gcdns_connect
 
 
 ################################################################################

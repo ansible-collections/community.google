@@ -126,7 +126,7 @@ options:
 
 EXAMPLES = '''
 - name: Create Minimum HealthCheck
-  community.general.gcp_healthcheck:
+  community.google.gcp_healthcheck:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -134,7 +134,7 @@ EXAMPLES = '''
     healthcheck_type: HTTP
     state: present
 - name: Create HTTP HealthCheck
-  community.general.gcp_healthcheck:
+  community.google.gcp_healthcheck:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -148,7 +148,7 @@ EXAMPLES = '''
     healthy_threshhold: 1
     state: present
 - name: Create HTTPS HealthCheck
-  community.general.gcp_healthcheck:
+  community.google.gcp_healthcheck:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -187,7 +187,7 @@ healthcheck:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gcp import get_google_api_client, GCPUtils
+from ansible_collections.community.google.plugins.module_utils.gcp import get_google_api_client, GCPUtils
 
 
 USER_AGENT_PRODUCT = 'ansible-healthcheck'

@@ -70,24 +70,24 @@ author: "Tom Melendez (@supertom)"
 
 EXAMPLES = '''
 - name: Create an image named test-image from the disk 'test-disk' in zone us-central1-a
-  community.general.gce_img:
+  community.google.gce_img:
     name: test-image
     source: test-disk
     zone: us-central1-a
     state: present
 
 - name: Create an image named test-image from a tarball in Google Cloud Storage
-  community.general.gce_img:
+  community.google.gce_img:
     name: test-image
     source: https://storage.googleapis.com/bucket/path/to/image.tgz
 
 - name: Alternatively use the gs scheme
-  community.general.gce_img:
+  community.google.gce_img:
     name: test-image
     source: gs://bucket/path/to/image.tgz
 
 - name: Delete an image named test-image
-  community.general.gce_img:
+  community.google.gce_img:
     name: test-image
     state: absent
 '''
@@ -106,7 +106,7 @@ except ImportError:
     has_libcloud = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gce import gce_connect
+from ansible_collections.community.google.plugins.module_utils.gce import gce_connect
 
 
 GCS_URI = 'https://storage.googleapis.com/'
