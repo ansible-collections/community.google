@@ -1,45 +1,23 @@
-# collection_template
-You can build a new repository for an Ansible Collection using this template by following [Creating a repository from a template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template). This README.md contains recommended headings for your collection README.md, with comments describing what each section should contain. Once you have created your collection repository, delete this paragraph and the title above it from your README.md.
-
-# Foo Collection
-<!-- Add CI and code coverage badges here. Samples included below. -->
-[![CI](https://github.com/ansible-collections/REPONAMEHERE/workflows/CI/badge.svg?event=push)](https://github.com/ansible-collections/REPONAMEHERE/actions) [![Codecov](https://img.shields.io/codecov/c/github/ansible-collections/REPONAMEHERE)](https://codecov.io/gh/ansible-collections/REPONAMEHERE)
-
-<!-- Describe the collection and why a user would want to use it. What does the collection do? -->
-
-## Tested with Ansible
-
-<!-- List the versions of Ansible the collection has been tested with. Must match what is in galaxy.yml. -->
+# community.google Ansible collection
+[![CI](https://github.com/ansible-collections/community.google/workflows/CI/badge.svg?event=push)](https://github.com/ansible-collections/community.google/actions) [![Codecov](https://img.shields.io/codecov/c/github/ansible-collections/community.google)](https://codecov.io/gh/ansible-collections/community.google)
 
 ## External requirements
 
-<!-- List any external resources the collection depends on, for example minimum versions of an OS, libraries, or utilities. Do not list other Ansible collections here. -->
-
-### Supported connections
-<!-- Optional. If your collection supports only specific connection types (such as HTTPAPI, netconf, or others), list them here. -->
+- boto
+- libcloud
+- google-auth
 
 ## Included content
 
-<!-- Galaxy will eventually list the module docs within the UI, but until that is ready, you may need to either describe your plugins etc here, or point to an external docsite to cover that information. -->
+See: https://docs.ansible.com/ansible/latest/collections/community/google/
 
 ## Using this collection
 
-<!--Include some quick examples that cover the most common use cases for your collection content. -->
-
 See [Ansible Using collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) for more details.
-
-## Contributing to this collection
-
-<!--Describe how the community can contribute to your collection. At a minimum, include how and where users can create issues to report problems or request features for this collection.  List contribution requirements, including preferred workflows and necessary testing, so you can benefit from community PRs. If you are following general Ansible contributor guidelines, you can link to - [Ansible Community Guide](https://docs.ansible.com/ansible/latest/community/index.html). -->
-
 
 ## Release notes
 
-See the [changelog](https://github.com/ansible-collections/REPONAMEHERE/tree/main/CHANGELOG.rst).
-
-## Roadmap
-
-<!-- Optional. Include the roadmap for this collection, and the proposed release/versioning strategy so users can anticipate the upgrade/update cycle. -->
+See the [changelog](https://github.com/ansible-collections/community.google/tree/main/CHANGELOG.rst).
 
 ## More information
 
@@ -54,8 +32,6 @@ See the [changelog](https://github.com/ansible-collections/REPONAMEHERE/tree/mai
 - [Changes impacting Contributors](https://github.com/ansible-collections/overview/issues/45)
 
 ## Licensing
-
-<!-- Include the appropriate license information here and a pointer to the full licensing details. If the collection contains modules migrated from the ansible/ansible repo, you must use the same license that existed in the ansible/ansible repo. See the GNU license example below. -->
 
 GNU General Public License v3.0 or later.
 
