@@ -101,7 +101,7 @@ options:
 
 EXAMPLES = '''
 - name: Create Minimal Url_Map
-  community.general.gcp_url_map:
+  community.google.gcp_url_map:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -109,7 +109,7 @@ EXAMPLES = '''
     default_service: my-backend-service
     state: present
 - name: Create UrlMap with pathmatcher
-  community.general.gcp_url_map:
+  community.google.gcp_url_map:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -172,7 +172,7 @@ except ImportError:
     HAS_PYTHON26 = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gcp import check_params, get_google_api_client, GCPUtils
+from ansible_collections.community.google.plugins.module_utils.gcp import check_params, get_google_api_client, GCPUtils
 from ansible.module_utils.six import string_types
 
 

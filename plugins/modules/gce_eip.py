@@ -61,7 +61,7 @@ options:
 
 EXAMPLES = '''
 - name: Create a Global external IP address
-  community.general.gce_eip:
+  community.google.gce_eip:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -70,7 +70,7 @@ EXAMPLES = '''
     state: present
 
 - name: Create a Regional external IP address
-  community.general.gce_eip:
+  community.google.gce_eip:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -119,7 +119,7 @@ except ImportError:
     HAS_LIBCLOUD = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gcp import gcp_connect
+from ansible_collections.community.google.plugins.module_utils.gcp import gcp_connect
 
 
 def get_address(gce, name, region):

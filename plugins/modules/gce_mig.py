@@ -104,7 +104,7 @@ EXAMPLES = '''
   gather_facts: False
   tasks:
     - name: Create MIG
-      community.general.gce_mig:
+      community.google.gce_mig:
         name: ansible-mig-example
         zone: us-central1-c
         state: present
@@ -121,7 +121,7 @@ EXAMPLES = '''
         seconds: 30
 
     - name: Recreate MIG Instances with Instance Template change.
-      community.general.gce_mig:
+      community.google.gce_mig:
         name: ansible-mig-example
         zone: us-central1-c
         state: present
@@ -133,14 +133,14 @@ EXAMPLES = '''
         seconds: 30
 
     - name: Resize MIG
-      community.general.gce_mig:
+      community.google.gce_mig:
         name: ansible-mig-example
         zone: us-central1-c
         state: present
         size: 3
 
     - name: Update MIG with Autoscaler
-      community.general.gce_mig:
+      community.google.gce_mig:
         name: ansible-mig-example
         zone: us-central1-c
         state: present
@@ -164,7 +164,7 @@ EXAMPLES = '''
         seconds: 30
 
     - name: Delete MIG
-      community.general.gce_mig:
+      community.google.gce_mig:
         name: ansible-mig-example
         zone: us-central1-c
         state: absent
@@ -285,7 +285,7 @@ except ImportError:
     HAS_LIBCLOUD = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gce import gce_connect
+from ansible_collections.community.google.plugins.module_utils.gce import gce_connect
 
 
 def _check_params(params, field_list):

@@ -58,17 +58,17 @@ options:
 
 EXAMPLES = '''
 - name: List all Topics in a project
-  community.general.gcpubsub_info:
+  community.google.gcpubsub_info:
     view: topics
     state: list
 
 - name: List all Subscriptions in a project
-  community.general.gcpubsub_info:
+  community.google.gcpubsub_info:
     view: subscriptions
     state: list
 
 - name: List all Subscriptions for a Topic in a project
-  community.general.gcpubsub_info:
+  community.google.gcpubsub_info:
     view: subscriptions
     topic: my-topic
     state: list
@@ -105,7 +105,7 @@ except ImportError as e:
     HAS_GOOGLE_CLOUD_PUBSUB = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gcp import check_min_pkg_version, get_google_cloud_credentials
+from ansible_collections.community.google.plugins.module_utils.gcp import check_min_pkg_version, get_google_cloud_credentials
 
 
 def list_func(data, member='name'):
@@ -121,9 +121,9 @@ def main():
         service_account_email=dict(),
         credentials_file=dict(),
         project_id=dict(), ),)
-    if module._name in ('gcpubsub_facts', 'community.general.gcpubsub_facts'):
+    if module._name in ('gcpubsub_facts', 'community.google.gcpubsub_facts'):
         module.deprecate("The 'gcpubsub_facts' module has been renamed to 'gcpubsub_info'",
-                         version='3.0.0', collection_name='community.general')  # was Ansible 2.13
+                         version='3.0.0', collection_name='community.google')  # was Ansible 2.13
 
     if not HAS_PYTHON26:
         module.fail_json(

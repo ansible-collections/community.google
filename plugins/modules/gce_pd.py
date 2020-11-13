@@ -125,7 +125,7 @@ except ImportError:
     HAS_LIBCLOUD = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gce import gce_connect, unexpected_error_msg
+from ansible_collections.community.google.plugins.module_utils.gce import gce_connect, unexpected_error_msg
 
 
 def main():

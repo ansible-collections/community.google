@@ -24,14 +24,14 @@ options:
       - The name of the bucket.
     required: false
 extends_documentation_fragment:
-- community.general._gcp
+- community.google._gcp
 
 '''
 
 EXAMPLES = '''
 - ansible.builtin.debug:
     msg: |
-         the value of foo.txt is {{ lookup('community.general.gcp_storage_file',
+         the value of foo.txt is {{ lookup('community.google.gcp_storage_file',
          bucket='gcp-bucket', src='mydir/foo.txt', project='project-name',
          auth_kind='serviceaccount', service_account_file='/tmp/myserviceaccountfile.json') }}
 '''
@@ -150,7 +150,7 @@ class GcpFileLookup():
 class LookupModule(LookupBase):
     def run(self, terms, variables=None, **kwargs):
         if not HAS_GOOGLE_CLOUD_COLLECTION:
-            raise AnsibleError("community.general.gcp_storage_file needs a supported version of the google.cloud collection installed")
+            raise AnsibleError("community.google.gcp_storage_file needs a supported version of the google.cloud collection installed")
         if not HAS_REQUESTS:
-            raise AnsibleError("community.general.gcp_storage_file needs requests installed. Use `pip install requests` to install it")
+            raise AnsibleError("community.google.gcp_storage_file needs requests installed. Use `pip install requests` to install it")
         return GcpFileLookup().run(terms, variables=variables, **kwargs)

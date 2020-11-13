@@ -127,7 +127,7 @@ options:
         description:
             - The Google Cloud Platform project ID to use.
 notes:
-    - See also M(community.general.gcdns_zone).
+    - See also M(community.google.gcdns_zone).
     - This modules's underlying library does not support in-place updates for
       DNS resource records. Instead, resource records are quickly deleted and
       recreated.
@@ -140,14 +140,14 @@ notes:
 
 EXAMPLES = '''
 - name: Create an A record
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'www1.example.com'
     zone: 'example.com'
     type: A
     value: '1.2.3.4'
 
 - name: Update an existing record
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'www1.example.com'
     zone: 'example.com'
     type: A
@@ -155,7 +155,7 @@ EXAMPLES = '''
     value: '5.6.7.8'
 
 - name: Remove an A record
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'www1.example.com'
     zone_id: 'example-com'
     state: absent
@@ -163,14 +163,14 @@ EXAMPLES = '''
     value: '5.6.7.8'
 
 - name: Create a CNAME record. Note the trailing dot of value
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'www.example.com'
     zone_id: 'example-com'
     type: CNAME
     value: 'www.example.com.'
 
 - name: Create an MX record with a custom TTL. Note the trailing dot of value
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'example.com'
     zone: 'example.com'
     type: MX
@@ -178,7 +178,7 @@ EXAMPLES = '''
     value: '10 mail.example.com.'
 
 - name: Create multiple A records with the same name
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'api.example.com'
     zone_id: 'example-com'
     type: A
@@ -189,7 +189,7 @@ EXAMPLES = '''
       - '203.0.113.10'
 
 - name: Change the value of an existing record with multiple record_data
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'api.example.com'
     zone: 'example.com'
     type: A
@@ -201,7 +201,7 @@ EXAMPLES = '''
       - '203.0.113.10'
 
 - name: Safely remove a multi-line record
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'api.example.com'
     zone_id: 'example-com'
     state: absent
@@ -213,7 +213,7 @@ EXAMPLES = '''
       - '203.0.113.10'
 
 - name: Unconditionally remove a record
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'api.example.com'
     zone_id: 'example-com'
     state: absent
@@ -221,21 +221,21 @@ EXAMPLES = '''
     type: A
 
 - name: Create an AAAA record
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'www1.example.com'
     zone: 'example.com'
     type: AAAA
     value: 'fd00:db8::1'
 
 - name: Create a PTR record
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: '10.5.168.192.in-addr.arpa'
     zone: '5.168.192.in-addr.arpa'
     type: PTR
     value: 'api.example.com.'    # Note the trailing dot.
 
 - name: Create an NS record
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'subdomain.example.com'
     zone: 'example.com'
     type: NS
@@ -247,7 +247,7 @@ EXAMPLES = '''
       - 'ns-cloud-d4.googledomains.com.'
 
 - name: Create a TXT record
-  community.general.gcdns_record:
+  community.google.gcdns_record:
     record: 'example.com'
     zone_id: 'example-com'
     type: TXT
@@ -322,7 +322,7 @@ except ImportError:
     PROVIDER = None
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gcdns import gcdns_connect
+from ansible_collections.community.google.plugins.module_utils.gcdns import gcdns_connect
 
 
 ################################################################################

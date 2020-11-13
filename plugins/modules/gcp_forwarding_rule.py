@@ -106,7 +106,7 @@ options:
 
 EXAMPLES = '''
 - name: Create Minimum GLOBAL Forwarding_Rule
-  community.general.gcp_forwarding_rule:
+  community.google.gcp_forwarding_rule:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -118,7 +118,7 @@ EXAMPLES = '''
     state: present
 
 - name: Create Forwarding_Rule w/reserved static address
-  community.general.gcp_forwarding_rule:
+  community.google.gcp_forwarding_rule:
     service_account_email: "{{ service_account_email }}"
     credentials_file: "{{ credentials_file }}"
     project_id: "{{ project_id }}"
@@ -155,7 +155,7 @@ state:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gcp import get_google_api_client, GCPUtils
+from ansible_collections.community.google.plugins.module_utils.gcp import get_google_api_client, GCPUtils
 
 
 USER_AGENT_PRODUCT = 'ansible-forwarding_rule'

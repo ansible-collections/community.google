@@ -60,7 +60,7 @@ author: Rob Wagner (@robwagner33)
 
 EXAMPLES = '''
 - name: Create gce snapshot
-  community.general.gce_snapshot:
+  community.google.gce_snapshot:
     instance_name: example-instance
     snapshot_name: example-snapshot
     state: present
@@ -70,7 +70,7 @@ EXAMPLES = '''
   delegate_to: localhost
 
 - name: Delete gce snapshot
-  community.general.gce_snapshot:
+  community.google.gce_snapshot:
     instance_name: example-instance
     snapshot_name: example-snapshot
     state: absent
@@ -82,7 +82,7 @@ EXAMPLES = '''
 # This example creates snapshots for only two of the available disks as
 # disk0-example-snapshot and disk1-example-snapshot
 - name: Create snapshots of specific disks
-  community.general.gce_snapshot:
+  community.google.gce_snapshot:
     instance_name: example-instance
     snapshot_name: example-snapshot
     state: present
@@ -129,7 +129,7 @@ except ImportError:
     HAS_LIBCLOUD = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gce import gce_connect
+from ansible_collections.community.google.plugins.module_utils.gce import gce_connect
 
 
 def find_snapshot(volume, name):

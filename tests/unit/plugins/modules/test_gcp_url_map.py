@@ -5,7 +5,7 @@ __metaclass__ = type
 
 import unittest
 
-from ansible_collections.community.general.plugins.modules.cloud.google.gcp_url_map import _build_path_matchers, _build_url_map_dict
+from ansible_collections.community.google.plugins.modules.gcp_url_map import _build_path_matchers, _build_url_map_dict
 
 
 class TestGCPUrlMap(unittest.TestCase):

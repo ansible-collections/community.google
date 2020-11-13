@@ -18,8 +18,8 @@ try:
 except ImportError:
     HAS_LIBCLOUD_BASE = False
 
-from ansible_collections.community.general.plugins.module_utils.gcp import gcp_connect
-from ansible_collections.community.general.plugins.module_utils.gcp import unexpected_error_msg as gcp_error
+from ansible_collections.community.google.plugins.module_utils.gcp import gcp_connect
+from ansible_collections.community.google.plugins.module_utils.gcp import unexpected_error_msg as gcp_error
 
 USER_AGENT_PRODUCT = "Ansible-gcdns"
 USER_AGENT_VERSION = "v1"

@@ -5,7 +5,7 @@ __metaclass__ = type
 
 import unittest
 
-from ansible_collections.community.general.plugins.modules.cloud.google.gce_tag import _get_changed_items, _intersect_items, _union_items
+from ansible_collections.community.google.plugins.modules.gce_tag import _get_changed_items, _intersect_items, _union_items
 
 
 class TestGCETag(unittest.TestCase):

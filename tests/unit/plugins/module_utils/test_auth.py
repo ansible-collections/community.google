@@ -10,10 +10,10 @@ import os
 
 import pytest
 
-from ansible_collections.community.general.tests.unit.compat import mock, unittest
-from ansible_collections.community.general.plugins.module_utils.gcp import (_get_gcp_ansible_credentials, _get_gcp_credentials, _get_gcp_environ_var,
-                                                                            _get_gcp_environment_credentials,
-                                                                            _validate_credentials_file)
+from ansible_collections.community.google.tests.unit.compat import mock, unittest
+from ansible_collections.community.google.plugins.module_utils.gcp import (_get_gcp_ansible_credentials, _get_gcp_credentials, _get_gcp_environ_var,
+                                                                           _get_gcp_environment_credentials,
+                                                                           _validate_credentials_file)
 
 # Fake data/function used for testing
 fake_env_data = {'GCE_EMAIL': 'gce-email'}
@@ -84,7 +84,7 @@ class GCPAuthTestCase(unittest.TestCase):
         # TODO(supertom): Only dealing with p12 here, check the other states
         # of this function
         module = FakeModule()
-        with mock.patch('ansible_collections.community.general.plugins.module_utils.gcp.open',
+        with mock.patch('ansible_collections.community.google.plugins.module_utils.gcp.open',
                         mock.mock_open(read_data='foobar'), create=True):
             # pem condition, warning is suppressed with the return_value
             credentials_file = '/foopath/pem.pem'
@@ -94,7 +94,7 @@ class GCPAuthTestCase(unittest.TestCase):
                                            require_valid_json=False,
                                            check_libcloud=False)
 
-    @mock.patch('ansible_collections.community.general.plugins.module_utils.gcp._get_gcp_environ_var',
+    @mock.patch('ansible_collections.community.google.plugins.module_utils.gcp._get_gcp_environ_var',
                 side_effect=fake_get_gcp_environ_var)
     def test_get_gcp_environment_credentials(self, mockobj):
         global fake_env_data
@@ -140,7 +140,7 @@ class GCPAuthTestCase(unittest.TestCase):
             'my-sa-email', '/path/to/creds.json', None)
         self.assertEqual(expected, actual)
 
-    @mock.patch('ansible_collections.community.general.plugins.module_utils.gcp._get_gcp_environ_var',
+    @mock.patch('ansible_collections.community.google.plugins.module_utils.gcp._get_gcp_environ_var',
                 side_effect=fake_get_gcp_environ_var)
     def test_get_gcp_credentials(self, mockobj):
         global fake_env_data

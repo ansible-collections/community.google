@@ -6,8 +6,8 @@
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
-from ansible_collections.community.general.tests.unit.compat import mock, unittest
-from ansible_collections.community.general.plugins.module_utils.gcp import check_min_pkg_version, GCPUtils, GCPInvalidURLError
+from ansible_collections.community.google.tests.unit.compat import mock, unittest
+from ansible_collections.community.google.plugins.module_utils.gcp import check_min_pkg_version, GCPUtils, GCPInvalidURLError
 
 
 def build_distribution(version):

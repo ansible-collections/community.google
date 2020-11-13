@@ -173,7 +173,7 @@ author: "Gwenael Pellen (@GwenaelPellenArkeup) <gwenael.pellen@arkeup.com>"
 EXAMPLES = '''
 # Usage
 - name: Create instance template named foo
-  community.general.gce_instance_template:
+  community.google.gce_instance_template:
     name: foo
     size: n1-standard-1
     image_family: ubuntu-1604-lts
@@ -191,7 +191,7 @@ EXAMPLES = '''
     project_id: "your-project-name"
   tasks:
     - name: Create instance template
-      community.general.gce_instance_template:
+      community.google.gce_instance_template:
         name: my-test-instance-template
         size: n1-standard-1
         image_family: ubuntu-1604-lts
@@ -200,7 +200,7 @@ EXAMPLES = '''
         credentials_file: "{{ credentials_file }}"
         service_account_email: "{{ service_account_email }}"
     - name: Delete instance template
-      community.general.gce_instance_template:
+      community.google.gce_instance_template:
         name: my-test-instance-template
         size: n1-standard-1
         image_family: ubuntu-1604-lts
@@ -218,7 +218,7 @@ EXAMPLES = '''
     project_id: "your-project-name"
   tasks:
     - name: Create instance template
-      community.general.gce_instance_template:
+      community.google.gce_instance_template:
         name: foo
         size: n1-standard-1
         state: present
@@ -259,7 +259,7 @@ except ImportError:
     HAS_LIBCLOUD = False
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.gce import gce_connect
+from ansible_collections.community.google.plugins.module_utils.gce import gce_connect
 from ansible.module_utils._text import to_native
 
 
