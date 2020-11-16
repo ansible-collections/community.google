@@ -1,5 +1,30 @@
 ---
 requires_ansible: '>=2.9.10'
+action_groups:
+  gcp:
+    - gc_storage
+    - gcdns_record
+    - gcdns_zone
+    - gce
+    - gce_eip
+    - gce_img
+    - gce_instance_template
+    - gce_labels
+    - gce_lb
+    - gce_mig
+    - gce_net
+    - gce_pd
+    - gce_snapshot
+    - gce_tag
+    - gcp_backend_service
+    - gcp_forwarding_rule
+    - gcp_healthcheck
+    - gcp_target_proxy
+    - gcp_url_map
+    - gcpubsub
+    - gcpubsub_info
+    - gcspanner
+
 plugin_routing:
   modules:
     gcdns_record:
