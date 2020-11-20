@@ -22,6 +22,7 @@ action_groups:
     - gcp_target_proxy
     - gcp_url_map
     - gcpubsub
+    - gcpubsub_facts
     - gcpubsub_info
     - gcspanner
 
