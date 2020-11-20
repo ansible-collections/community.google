@@ -1,0 +1,3 @@
+---
+bugfixes:
+  - Added missing 'gcp' action_groups for community.google modules, allowing Ansible's module_defaults feature to be used
