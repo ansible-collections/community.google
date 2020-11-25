@@ -1,7 +1,3 @@
-plugins/modules/gcdns_record.py validate-modules:parameter-list-no-elements
-plugins/modules/gce.py pylint:blacklisted-name
-plugins/modules/gce.py validate-modules:parameter-list-no-elements
-plugins/modules/gce.py yamllint:unparsable-with-libyaml
 plugins/modules/gce_eip.py pylint:blacklisted-name
 plugins/modules/gce_eip.py validate-modules:parameter-list-no-elements
 plugins/modules/gce_img.py pylint:blacklisted-name
@@ -21,15 +17,6 @@ plugins/modules/gce_snapshot.py pylint:blacklisted-name
 plugins/modules/gce_snapshot.py validate-modules:parameter-list-no-elements
 plugins/modules/gce_tag.py pylint:blacklisted-name
 plugins/modules/gce_tag.py validate-modules:parameter-list-no-elements
-plugins/modules/gcp_backend_service.py pylint:blacklisted-name
-plugins/modules/gcp_backend_service.py validate-modules:parameter-list-no-elements
-plugins/modules/gcp_forwarding_rule.py validate-modules:parameter-list-no-elements
-plugins/modules/gcp_healthcheck.py pylint:blacklisted-name
-plugins/modules/gcp_healthcheck.py validate-modules:parameter-list-no-elements
-plugins/modules/gcp_target_proxy.py validate-modules:parameter-list-no-elements
-plugins/modules/gcp_url_map.py validate-modules:parameter-list-no-elements
 plugins/modules/gcpubsub.py validate-modules:parameter-list-no-elements
 plugins/modules/gcpubsub_info.py validate-modules:parameter-state-invalid-choice
-tests/unit/plugins/modules/test_gcp_forwarding_rule.py future-import-boilerplate
-tests/unit/plugins/modules/test_gcp_forwarding_rule.py metaclass-boilerplate
 scripts/inventory/gce.py pylint:blacklisted-name
