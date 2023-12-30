@@ -323,7 +323,7 @@ def main():
                     module.fail_json(msg="Could not remove unmatched label pair '%s':'%s'" % (k, v))
     else:
         for k, v in module.params['labels'].items():
-            if k not in new_labels:
+            if k not in new_labels or (k in new_labels and new_labels[k] != v):
                 update_needed = True
                 new_labels[k] = v
 
